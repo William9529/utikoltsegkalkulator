@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Kanit', sans-serif;
+    width: 100vw;
+    color: white;
+    /* background-image: url(img/road9.jpg);
+    background-size: contain;
+    background-repeat: no-repeat; */
+
+}
+
+h1 {
+    display: block;
+    margin: auto;
+    margin-bottom: 0px;
+    
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    /*  border: 2px solid black; */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
+
+}
+
+input {
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+#calculate {
+    margin: auto;
+}
+
+/* div{
+    border: 2px solid black;
+} */
+
+h2 {
+    margin-bottom: 5px
+}
+
+button {
+    margin-left: auto;
+    display: block;
+    color: white;
+    background-color: grey;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#background {
+    background-image: url(img/road9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+
+}

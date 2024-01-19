@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Útiköltség kalkulátor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="background"></div>
+    <h1>Útiköltség kalkulátor</h1>
+    <div id="container">
+        <div id="inner">
+            <h2>Távolság:</h2>
+            <input type="text" id="distance" inputmode="decimal"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '');" required>
+            <span>km</span>
+            <br>
+
+            <h2>Átlag fogyasztás:</h2>
+            <input type="text" id="consumption" inputmode="decimal"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '');" required>
+            <span>liter/100km</span>
+            <br>
+
+            <h2>Üzemanyagár:</h2>
+            <input type="text" id="fuel" inputmode="decimal" oninput="this.value = this.value.replace(/[^0-9.]/g, '');"
+                required>
+            <span>Ft/liter</span>
+            <br>
+
+            <h2>Egyéb költség [opcionális]:</h2>
+            <input type="text" id="others" placeholder="0" inputmode="decimal"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '');" required>
+            <span>Ft</span>
+            <br>
+
+            <button id="calculate">Számol</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
