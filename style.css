@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Kanit', sans-serif;
     width: 100vw;
@@ -17,7 +18,7 @@ h1 {
     display: block;
     margin: auto;
     margin-bottom: 0px;
-    
+
 }
 
 #container {
@@ -55,8 +56,12 @@ button {
     display: block;
     color: white;
     background-color: grey;
+    text-align: center;
     border: 2px solid white;
     border-radius: 5px;
+    height: 25px;
+    width: 100px;
+    font-size: 20px;
 }
 
 #background {
