@@ -4,6 +4,7 @@ const fuel = document.getElementById("fuel")
 const button = document.getElementById("calculate")
 const others = document.getElementById("others")
 const result = document.createElement("h2")
+result.id = "result";
 const div = document.getElementById("inner")
 
 

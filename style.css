@@ -38,20 +38,15 @@ input {
     width: 50px;
 }
 
-#calculate {
-    margin: auto;
+#calculate{
+    margin-top: 20px;
 }
-
-/* div{
-    border: 2px solid black;
-} */
 
 h2 {
     margin-bottom: 5px
 }
 
 button {
-    margin-left: auto;
     display: block;
     color: white;
     background-color: grey;
@@ -81,4 +76,9 @@ button:hover{
     z-index: -1;
     display: block;
 
+}
+
+#result{
+    margin-top: 30px;
+    font-size: 30px;
 }
