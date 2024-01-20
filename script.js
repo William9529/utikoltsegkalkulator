@@ -36,7 +36,7 @@ button.addEventListener("click", function(){
 })
 
 function calculateFare(){
-    return consumptionValue*fuelValue*(distanceValue/100)+othersValue
+    return Math.round(consumptionValue*fuelValue*(distanceValue/100)+Number(othersValue))
 }
 
 
