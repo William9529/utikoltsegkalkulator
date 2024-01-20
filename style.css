@@ -81,4 +81,9 @@ button:hover{
 #result{
     margin-top: 30px;
     font-size: 30px;
+    background-color: grey;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
+

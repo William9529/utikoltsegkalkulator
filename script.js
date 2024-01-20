@@ -30,7 +30,7 @@ fuel.addEventListener("input", function(e){
 })
 
 button.addEventListener("click", function(){
-    result.innerText = `Útiköltség: ${calculateFare()} Ft`
+    result.innerHTML = `Útiköltség: <span id="fare">${calculateFare()}</span> Ft`
     div.appendChild(result)
     
 })
