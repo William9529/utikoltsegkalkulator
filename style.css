@@ -1,14 +1,44 @@
-/* ... a korábbi CSS marad, csak ezeket add hozzá vagy frissítsd ... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Kanit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+
+#background {
+    background-image: url('img/road9.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.6) blur(3px);
+}
+
+/* Nyelvváltó gomb */
 #language-switch {
     position: fixed;
     top: 20px;
     right: 20px;
     width: auto;
-    height: auto;
     padding: 8px 15px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     color: white;
@@ -16,7 +46,7 @@
     font-weight: 500;
     cursor: pointer;
     z-index: 100;
-    margin-top: 0; /* Felülírja az alap gomb margót */
+    transition: all 0.3s ease;
 }
 
 #language-switch:hover {
@@ -24,13 +54,87 @@
     transform: scale(1.05);
 }
 
-/* Kicsi képernyőn vigyázzunk, ne lógjon rá a címre */
-@media (max-width: 450px) {
-    #language-switch {
-        top: 10px;
-        right: 10px;
-        font-size: 0.8rem;
-    }
+h1 {
+    margin: 60px 15px 30px 15px; /* Megemelt felső margó a gomb miatt */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
 }
 
-/* ... minden más marad a reszponzív CSS-ből ... */
+#container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-weight: 300;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    color: #333;
+    outline: none;
+    font-family: 'Kanit', sans-serif;
+}
+
+.unit {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-align: right;
+    opacity: 0.8;
+}
+
+button#calculate {
+    width: 100%;
+    height: 55px;
+    margin-top: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button#calculate:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(46, 204, 113, 0.25);
+    border: 1px solid #2ecc71;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* Reszponzív finomítás fektetett módhoz */
+@media (max-height: 550px) {
+    h1 { margin: 20px 0 10px 0; font-size: 1.5rem; }
+    #language-switch { top: 10px; right: 10px; padding: 5px 10px; }
+}

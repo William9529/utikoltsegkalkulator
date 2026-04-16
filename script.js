@@ -17,6 +17,10 @@ const translations = {
         other_label: "Egyéb költség:",
         calc_btn: "Kiszámít",
         result_text: "Útiköltség:",
+        unit_km: "km",
+        unit_cons: "liter/100km",
+        unit_price: "Ft/liter",
+        unit_ft: "Ft",
         lang_btn: "🇺🇸 EN"
     },
     en: {
@@ -27,35 +31,31 @@ const translations = {
         other_label: "Other Costs:",
         calc_btn: "Calculate",
         result_text: "Total Fare:",
+        unit_km: "miles/km",
+        unit_cons: "liters/100km",
+        unit_price: "Currency/liter",
+        unit_ft: "Currency",
         lang_btn: "🇭🇺 HU"
     }
 };
 
-// Nyelvváltás funkció
 langBtn.addEventListener("click", () => {
     currentLang = currentLang === 'hu' ? 'en' : 'hu';
     updateLanguage();
 });
 
 function updateLanguage() {
-    // Minden elemet megkeresünk, aminek van data-key attribútuma
     document.querySelectorAll("[data-key]").forEach(elem => {
         const key = elem.getAttribute("data-key");
         elem.textContent = translations[currentLang][key];
     });
-    
-    // A gomb feliratának külön frissítése
     langBtn.textContent = translations[currentLang].lang_btn;
     
-    // Ha már kint van az eredmény, azt is frissítjük
+    // Ha már van eredmény, frissítjük a szövegét
     const resultElem = document.getElementById("result");
-    if (resultElem) {
-        // Újraszámoljuk, hogy a szöveg frissüljön
-        calculateBtn.click();
-    }
+    if (resultElem) { calculateBtn.click(); }
 }
 
-// Számítás (maradt a korábbi logikával, de a szöveget a szótárból veszi)
 const resultDisplay = document.createElement("div");
 resultDisplay.id = "result";
 
@@ -66,16 +66,15 @@ calculateBtn.addEventListener("click", () => {
     const o = parseFloat(othersInput.value.replace(',', '.')) || 0;
 
     const total = Math.round((c / 100) * d * f + o);
+    const currency = currentLang === 'hu' ? 'Ft' : 'Units';
     
-    const label = translations[currentLang].result_text;
-    resultDisplay.innerHTML = `${label} <strong>${total.toLocaleString()}</strong> Ft`;
+    resultDisplay.innerHTML = `${translations[currentLang].result_text} <strong>${total.toLocaleString()}</strong> ${currency}`;
     
     if (!document.getElementById("result")) {
         innerDiv.appendChild(resultDisplay);
     }
 });
 
-// Szám beviteli védelem
 [distanceInput, consumptionInput, fuelInput, othersInput].forEach(input => {
     input.addEventListener("input", function() {
         this.value = this.value.replace(/[^0-9.,]/g, '');

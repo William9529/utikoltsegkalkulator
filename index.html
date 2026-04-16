@@ -6,13 +6,10 @@
     <title>Útiköltség kalkulátor</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="background"></div>
-    
     <button id="language-switch">🇺🇸 EN</button>
 
     <h1 data-key="title">Útiköltség kalkulátor</h1>
@@ -22,25 +19,25 @@
             <div class="input-group">
                 <h2 data-key="dist_label">Távolság:</h2>
                 <input type="text" id="distance" inputmode="decimal" placeholder="Pl. 120">
-                <span>km</span>
+                <span class="unit" data-key="unit_km">km</span>
             </div>
 
             <div class="input-group">
                 <h2 data-key="cons_label">Átlag fogyasztás:</h2>
                 <input type="text" id="consumption" inputmode="decimal" placeholder="Pl. 6.5">
-                <span>liter/100km</span>
+                <span class="unit" data-key="unit_cons">liter/100km</span>
             </div>
 
             <div class="input-group">
                 <h2 data-key="fuel_label">Üzemanyagár:</h2>
                 <input type="text" id="fuel" inputmode="decimal" placeholder="Pl. 610">
-                <span>Ft/liter</span>
+                <span class="unit" data-key="unit_price">Ft/liter</span>
             </div>
 
             <div class="input-group">
                 <h2 data-key="other_label">Egyéb költség:</h2>
                 <input type="text" id="others" placeholder="0" inputmode="decimal">
-                <span>Ft</span>
+                <span class="unit" data-key="unit_ft">Ft</span>
             </div>
 
             <button id="calculate" data-key="calc_btn">Kiszámít</button>
