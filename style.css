@@ -24,7 +24,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: brightness(0.6) blur(3px);
+    /* Kivettem a blur-t, csak a sötétítést hagytam meg, hogy olvashatóbb legyen a szöveg */
+    filter: brightness(0.7); 
 }
 
 /* --- ASZTALI NÉZET --- */
@@ -39,13 +40,14 @@ h1 {
 #container {
     width: 90%;
     max-width: 450px;
-    background: rgba(255, 255, 255, 0.1);
+    /* Kicsit sötétebb háttér, hogy jobban kijöjjön az elmosódás */
+    background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .input-group {
@@ -56,6 +58,7 @@ h2 {
     font-size: 1.1rem;
     margin-bottom: 8px;
     font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 input {
@@ -74,7 +77,8 @@ input {
     font-size: 0.85rem;
     margin-top: 4px;
     text-align: right;
-    opacity: 0.8;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 button {
@@ -89,6 +93,7 @@ button {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 button:hover {
@@ -99,11 +104,12 @@ button:hover {
 #result {
     margin-top: 20px;
     padding: 15px;
-    background: rgba(46, 204, 113, 0.25);
+    background: rgba(46, 204, 113, 0.3);
     border: 1px solid #2ecc71;
     border-radius: 10px;
     text-align: center;
     font-size: 1.4rem;
+    backdrop-filter: blur(5px);
 }
 
 /* --- MOBIL NÉZET --- */
@@ -114,23 +120,23 @@ button:hover {
     }
 
     h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
     #container {
         width: 95%;
-        padding: 15px;
+        padding: 20px;
     }
 
     .input-group {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
-    h2 { font-size: 0.9rem; margin-bottom: 3px; }
-    input { padding: 8px; font-size: 1rem; }
-    .unit { font-size: 0.75rem; }
-    button { height: 45px; font-size: 1.1rem; }
+    h2 { font-size: 1rem; margin-bottom: 5px; }
+    input { padding: 10px; font-size: 1.1rem; }
+    .unit { font-size: 0.8rem; }
+    button { height: 50px; font-size: 1.2rem; }
 }
 
 @media (max-height: 500px) {
